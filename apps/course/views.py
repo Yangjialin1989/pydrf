@@ -18,6 +18,7 @@ from rest_framework.mixins import ListModelMixin,CreateModelMixin
 from rest_framework.views import APIView
 
 from .models import Course
+from .pagination import CoursePagination
 # 导入序列化类
 from .serializers import CourseSerializer
 
@@ -189,6 +190,7 @@ class GCourseDetail(generics.RetrieveUpdateDestroyAPIView):
 class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    pagination_class  = CoursePagination
     #permission_classes = (IsAuthenticated, IsOwnerOrReadOnly)
 
     def perform_create(self, serializer):
