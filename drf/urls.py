@@ -18,7 +18,7 @@ from django.urls import path,include
 from rest_framework.authtoken import views
 from rest_framework.documentation import include_docs_urls
 #from drfdemo.views import StudentView
-#from student.views import
+
 urlpatterns = [
     path('api-token-auth/',views.obtain_auth_token), # 获取token接口
     path('api-auth/',include('rest_framework.urls')),# DRF登录退出。
@@ -26,5 +26,6 @@ urlpatterns = [
     path('course/',include('course.urls')),
     #path('course/',views.course_list)
     path('docs/',include_docs_urls(title='drf api doc',description='drf api doc')),
-    path('student/',include('student.urls'))
+    path('student/',include('student.urls')),
+
 ]

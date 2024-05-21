@@ -21,7 +21,7 @@ urlpatterns = [
     # path('gcbv/list/',views.GCourseList.as_view(),name='gcbv-list'),
     # path('gcbv/detail/<int:pk>/',views.GCourseDetail.as_view(),name='gcbv-detail'),
 
-    path('',include(router.urls))
+    path('',include(router.urls)),
 ]
 
 
